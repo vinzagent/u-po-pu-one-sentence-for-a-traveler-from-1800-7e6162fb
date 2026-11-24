@@ -32,6 +32,8 @@ def validate(text: str) -> None:
         raise SystemExit("text must not be only whitespace or padded")
     if "\n" in text or "\r" in text:
         raise SystemExit("text must be a single line")
+    if "  " in text:
+        raise SystemExit("text must use single spaces between words")
     if text.count(".") != 1 or not text.endswith("."):
         raise SystemExit("text must be exactly one sentence ending in '.'")
 
